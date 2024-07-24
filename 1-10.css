@@ -1,0 +1,54 @@
+/*변수지정*/
+/* :root {
+  --main-color: rgb(98, 220, 147);
+  --sub-color: rgb(100, 100, 100);
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: var(--main-color);
+} */
+/*transition 속성*/
+.box {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+}
+.logo {
+  width: 200px;
+  height: 200px;
+  animation: 3s awesome infinite alternate;
+}
+.alert {
+  width: 100vw;
+  height: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: red;
+  display: none;
+}
+/* .box:hover {
+  transform: scale(0.5) rotate(90deg);
+} */
+@keyframes awesome {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(50px) rotate(180deg);
+  }
+  100% {
+    transform: translate(50px, 50px) rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .box {
+    background-color: tomato;
+  }
+  .alert {
+    display: block;
+  }
+}
