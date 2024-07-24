@@ -28,6 +28,29 @@ footer {
   font-weight: bold;
   transform: scale(1);
 }
+
+@keyframes icons-둥-둥 {
+  /* 0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  } */
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
 .footer-icons__img {
   width: 30px;
+}
+
+.footer-icons:hover .footer-icons__img {
+  animation: 1s icons-둥-둥 infinite alternate;
 }
