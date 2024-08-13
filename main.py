@@ -8,6 +8,19 @@ import sqlite3
 con = sqlite3.connect('db.db',check_same_thread=False)
 cur = con.cursor()
 
+cur.execute(f"""
+            CREATE TABLE IF NOT EXISTS items (
+	            id INTEGER PRIMARY KEY,
+	            title TEXT NOT NULL,
+	            image BLOB,
+	            price INTEGER NOT NULL,
+	            description TEXT,
+	            place TEXT NOT NULL,
+	            insertAt INTEGER NOT NULL
+            );
+            """)
+
+
 app = FastAPI()
 
 
@@ -46,6 +59,6 @@ async def get_image(item_id):
                               SELECT image from items WHERE id= {item_id}
                               """).fetchone()[0] #튀플 벗겨주기위해
     
-    return Response(content = bytes.fromhex(image_bytes))
+    return Response(content = bytes.fromhex(image_bytes),media_type = 'image/*')
 
 app.mount("/", StaticFiles(directory="frontend",html =True), name="frontend")
