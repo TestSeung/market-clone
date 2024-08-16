@@ -14,6 +14,7 @@
   } from "firebase/auth";
   import { onMount } from "svelte";
   import Loading from "./pages/Loading.svelte";
+  import MyCarrot from "./pages/MyCarrot.svelte";
 
   const auth = getAuth();
 
@@ -35,6 +36,7 @@
     "/": Main,
     "/signup": Signup,
     "/write": Write,
+    "/my": MyCarrot,
     "*": NotFound, //예외처리
   };
 
